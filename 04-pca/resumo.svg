@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1280" role="img" aria-labelledby="title desc">
+  <title id="title">PCA em uma página</title>
+  <desc id="desc">Resumo de componentes principais, variância explicada, interpretação, Bartlett, comunalidade e ranking.</desc>
+  <style>
+    text {font-family:Arial,sans-serif; fill:#182c38}
+    .tag {font-size:16px; font-weight:700; letter-spacing:2px}
+    .headline {font-size:52px; font-weight:700; fill:#fff}
+    .subtitle {font-size:21px; fill:#d8e7e9}
+    .label {font-size:25px; font-weight:700}
+    .body {font-size:20px}
+    .mini {font-size:17px}
+  </style>
+  <rect width="1080" height="1280" fill="#edf2ef"/>
+  <rect width="1080" height="166" fill="#183743"/>
+  <text class="tag" x="46" y="40" style="fill:#afe2d5">04 / APRENDIZADO NÃO SUPERVISIONADO</text>
+  <text class="headline" x="44" y="104">PCA</text>
+  <text class="subtitle" x="46" y="141">Resuma variáveis em eixos que capturam a maior parte da variação.</text>
+
+  <rect x="40" y="190" width="1000" height="126" rx="16" fill="#fff"/>
+  <text class="label" x="64" y="227">01 / Prepare as variáveis</text>
+  <text class="body" x="64" y="261">Centralize as colunas para PCA por covariância.</text>
+  <text class="body" x="64" y="290">Padronize para dar a mesma variância inicial a cada variável (PCA por correlação).</text>
+
+  <rect x="40" y="335" width="490" height="425" rx="16" fill="#fff"/>
+  <text class="label" x="64" y="375">02 / Crie novos eixos</text>
+  <text class="body" x="64" y="410">Autovetor = direção do componente.</text>
+  <text class="body" x="64" y="437">Autovalor = variância do componente.</text>
+  <text class="body" x="64" y="464">Escore = coordenada da observação.</text>
+  <rect x="64" y="490" width="442" height="195" rx="9" fill="#eef6f3"/>
+  <text class="tag" x="83" y="517" style="fill:#22685c">VARIAÇÃO CONJUNTA E CONTRASTE</text>
+  <path d="M 115 600 H 454 M 285 665 V 536" stroke="#92a4a9" stroke-width="2"/>
+  <path d="M 165 660 L 407 539" fill="none" stroke="#247e71" stroke-width="4"/>
+  <path d="M 254 538 L 320 670" fill="none" stroke="#b14a21" stroke-width="3"/>
+  <g fill="#183743">
+    <circle cx="206" cy="643" r="6"/><circle cx="238" cy="615" r="6"/>
+    <circle cx="265" cy="628" r="6"/><circle cx="291" cy="592" r="6"/>
+    <circle cx="321" cy="579" r="6"/><circle cx="352" cy="570" r="6"/>
+    <circle cx="375" cy="552" r="6"/>
+  </g>
+  <text class="mini" x="414" y="541" style="fill:#22685c">PC1</text>
+  <text class="mini" x="330" y="671" style="fill:#a4431f">PC2</text>
+  <text class="mini" x="447" y="624">z₁</text>
+  <text class="mini" x="293" y="548">z₂</text>
+  <text class="body" x="64" y="720">PC1 captura a maior variância possível.</text>
+  <text class="mini" x="64" y="743">PC2 é ortogonal a PC1.</text>
+
+  <rect x="550" y="335" width="490" height="425" rx="16" fill="#fff"/>
+  <text class="label" x="574" y="375">03 / Retenha componentes</text>
+  <text class="body" x="574" y="410">% explicado = autovalor / soma × 100.</text>
+  <text class="body" x="574" y="437">Acumule as parcelas em ordem.</text>
+  <text class="body" x="574" y="464">No scree plot, procure a inflexão.</text>
+  <rect x="574" y="490" width="442" height="195" rx="9" fill="#eef6f3"/>
+  <text class="tag" x="593" y="517" style="fill:#22685c">VARIÂNCIA EXPLICADA / EXEMPLO</text>
+  <path d="M 606 650 H 987" stroke="#92a4a9" stroke-width="2"/>
+  <g fill="#247e71">
+    <rect x="634" y="554" width="44" height="96"/>
+    <rect x="705" y="594" width="44" height="56"/>
+    <rect x="776" y="622" width="44" height="28"/>
+  </g>
+  <g fill="#abc5c4"><rect x="847" y="638" width="44" height="12"/><rect x="918" y="642" width="44" height="8"/></g>
+  <g class="mini" text-anchor="middle">
+    <text x="656" y="547">48%</text><text x="727" y="587">28%</text><text x="798" y="615">14%</text>
+    <text x="869" y="631">6%</text><text x="940" y="635">4%</text>
+    <text x="656" y="674">PC1</text><text x="727" y="674">PC2</text><text x="798" y="674">PC3</text>
+    <text x="869" y="674">PC4</text><text x="940" y="674">PC5</text>
+  </g>
+  <text class="body" x="574" y="720">PC1 + PC2 = 76%.</text>
+  <text class="mini" x="574" y="743">Para atingir 80%, retenha 3 PCs (90%).</text>
+
+  <rect x="40" y="780" width="1000" height="210" rx="16" fill="#d5ebe4"/>
+  <text class="label" x="64" y="820">04 / Interprete a saída</text>
+  <text class="body" x="64" y="858">Escores descrevem observações. Cargas ajudam a interpretar as variáveis.</text>
+  <text class="body" x="64" y="889">O sinal de cada componente pode inverter sem alterar a variância explicada.</text>
+  <text class="body" x="64" y="920">Escores descorrelacionados podem continuar dependentes.</text>
+  <text class="body" x="64" y="951">Kaiser: autovalor acima de 1 é uma heurística para PCA por correlação.</text>
+
+  <rect x="40" y="1010" width="1000" height="230" rx="16" fill="#fff"/>
+  <text class="label" x="64" y="1050">05 / Da correlação ao ranking</text>
+  <text class="body" x="64" y="1088">Bartlett: H₀ diz que a matriz de correlação populacional é a identidade.</text>
+  <text class="body" x="64" y="1119">Carga: correlação da variável com o fator. Comunalidade: soma das cargas² retidas.</text>
+  <text class="body" x="64" y="1150">Escore fatorial padronizado: escore do componente ÷ raiz do autovalor.</text>
+  <text class="body" x="64" y="1181">Ranking: some os escores fatoriais ponderados pela variância explicada.</text>
+  <text class="mini" x="64" y="1212">Confirme o sentido dos fatores antes de interpretar uma nota maior.</text>
+</svg>

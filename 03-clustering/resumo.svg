@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1030" role="img" aria-labelledby="title desc">
+  <title id="title">Clustering em uma página</title>
+  <desc id="desc">Resumo de pré-processamento, dendrograma, K-Means, inércia, silhueta e comparação entre grupos.</desc>
+  <style>
+    text {font-family:Arial,sans-serif; fill:#182c38}
+    .tag {font-size:16px; font-weight:700; letter-spacing:2px}
+    .headline {font-size:52px; font-weight:700; fill:#fff}
+    .subtitle {font-size:21px; fill:#d8e7e9}
+    .label {font-size:25px; font-weight:700}
+    .body {font-size:20px}
+    .mini {font-size:17px}
+    .white {fill:#fff}
+  </style>
+  <rect width="1080" height="1030" fill="#edf2ef"/>
+  <rect width="1080" height="166" fill="#183743"/>
+  <text class="tag" x="46" y="40" fill="#fff" style="fill:#afe2d5">03 / APRENDIZADO NÃO SUPERVISIONADO</text>
+  <text class="headline" x="44" y="104">Clustering</text>
+  <text class="subtitle" x="46" y="141">Agrupe observações por semelhança de perfil.</text>
+
+  <rect x="40" y="190" width="1000" height="126" rx="16" fill="#fff"/>
+  <text class="label" x="64" y="227">01 / Prepare os dados</text>
+  <text class="body" x="64" y="261">Escolha variáveis relevantes, trate valores ausentes e avalie outliers.</text>
+  <text class="body" x="64" y="290">Com escalas distintas, considere z = (x − média) / desvio padrão.</text>
+
+  <rect x="40" y="335" width="490" height="425" rx="16" fill="#fff"/>
+  <text class="label" x="64" y="375">02 / Hierárquico</text>
+  <text class="body" x="64" y="410">Cada observação começa sozinha.</text>
+  <text class="body" x="64" y="437">O critério de ligação guia as fusões.</text>
+  <text class="mini" x="64" y="468">Single: mínimo · Complete: máximo</text>
+  <text class="mini" x="64" y="491">Average: média dos pares · Ward: aumento de SSE</text>
+  <rect x="64" y="515" width="442" height="170" rx="9" fill="#eef6f3"/>
+  <text class="tag" x="83" y="542" style="fill:#22685c">DENDROGRAMA / SINGLE</text>
+  <g fill="none" stroke="#247e71" stroke-width="4">
+    <path d="M 146 652 V 615 H 226 V 652 M 344 652 V 577 H 424 V 652 M 186 615 V 558 H 384 V 577"/>
+    <path d="M 82 568 H 488" stroke="#b14a21" stroke-width="2" stroke-dasharray="7 5"/>
+  </g>
+  <g class="mini" text-anchor="middle">
+    <text x="146" y="674">1</text><text x="226" y="674">3</text>
+    <text x="344" y="674">8</text><text x="424" y="674">12</text>
+  </g>
+  <text class="body" x="64" y="719">Conte os ramos cruzados pelo corte.</text>
+  <text class="mini" x="64" y="742">A linha tracejada separa dois grupos.</text>
+
+  <rect x="550" y="335" width="490" height="425" rx="16" fill="#fff"/>
+  <text class="label" x="574" y="375">03 / K-Means</text>
+  <text class="body" x="574" y="410">Defina k e inicie os centroides.</text>
+  <text class="body" x="574" y="437">Atribua ao centro euclidiano mais próximo.</text>
+  <text class="body" x="574" y="464">Atualize pela média de cada grupo.</text>
+  <text class="body" x="574" y="491">Repita até convergir.</text>
+  <rect x="574" y="515" width="442" height="170" rx="9" fill="#eef6f3"/>
+  <text class="tag" x="593" y="542" style="fill:#22685c">PONTOS E CENTROIDES / k = 2</text>
+  <path d="M 602 608 H 990" stroke="#82959c" stroke-width="2"/>
+  <g fill="#247e71"><circle cx="628" cy="608" r="7"/><circle cx="688" cy="608" r="7"/></g>
+  <g fill="#b14a21"><circle cx="838" cy="608" r="7"/><circle cx="958" cy="608" r="7"/></g>
+  <path d="M 658 600 l 8 8 -8 8 -8 -8 Z" fill="#247e71"/>
+  <path d="M 898 600 l 8 8 -8 8 -8 -8 Z" fill="#b14a21"/>
+  <g class="mini" text-anchor="middle">
+    <text x="628" y="634">1</text><text x="688" y="634">3</text>
+    <text x="838" y="634">8</text><text x="958" y="634">12</text>
+    <text x="658" y="588">µ = 2</text><text x="898" y="588">µ = 10</text>
+  </g>
+  <text class="mini" x="593" y="666">WCSS = 1 + 1 + 4 + 4 = 10</text>
+  <text class="body" x="574" y="719">Teste mais de uma inicialização.</text>
+  <text class="mini" x="574" y="742">A solução depende dos centros iniciais.</text>
+
+  <rect x="40" y="780" width="1000" height="210" rx="16" fill="#d5ebe4"/>
+  <text class="label" x="64" y="820">04 / Avalie a partição</text>
+  <text class="body" x="64" y="858">Cotovelo: procure onde a redução da WCSS começa a ficar pequena.</text>
+  <text class="body" x="64" y="889">Silhueta: (b − a) / máx(a,b), com a intragrupo e b do grupo vizinho mais próximo.</text>
+  <text class="body" x="64" y="920">F descritivo: quadrado médio entre grupos dividido pelo de dentro dos grupos.</text>
+  <text class="body" x="64" y="951">Compare tamanho, estabilidade e perfil dos grupos nas unidades originais.</text>
+</svg>
